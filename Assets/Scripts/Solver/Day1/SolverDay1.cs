@@ -1,3 +1,4 @@
+using AdventOfCode.Solver.Interface;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -5,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SolverDay1 : MonoBehaviour
+public class SolverDay1 : MonoBehaviour, IDisplaySolution
 {
     private enum Digit
     {
@@ -109,12 +110,17 @@ public class SolverDay1 : MonoBehaviour
             if (match.Success && matchInv.Success)
             {
                 int temporaryNumber = ExtractDigit(match.Value) *10 + ExtractDigit(matchInv.Value);
-                Debug.Log(temporaryNumber);
+              //  Debug.Log(temporaryNumber);
                 _solution += temporaryNumber;
             }
         }
-        Debug.Log("Nombre de ligne : " + substr.Length +"\nSolution : " + _solution);
+       // Debug.Log("Nombre de ligne : " + substr.Length +"\nSolution : " + _solution);
         _isSolved = true;
         
+    }
+
+    public int GetSolution()
+    {
+        return Solution;
     }
 }
