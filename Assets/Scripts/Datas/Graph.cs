@@ -23,6 +23,7 @@ namespace AdventOfCode.Datas
         public Graph()
         {
             _edges = new Dictionary<T, LinkedList<T>>();
+            NumberOfMove = 0;
         }
 
         public void AddEdge(T from, T to, bool verbose = false)
@@ -30,9 +31,14 @@ namespace AdventOfCode.Datas
             if (!_edges.ContainsKey(from))
             {
                 _edges[from] = new LinkedList<T>();
+                _numberOfNode++;
             }
             _edges[from].AddLast(to);
 
+        }
+        public void InitStartingNode (T startingNode)
+        {
+            _startingNode = startingNode;
         }
         public void InitGraph(T startingNode, List<T> finalNode)
         {
