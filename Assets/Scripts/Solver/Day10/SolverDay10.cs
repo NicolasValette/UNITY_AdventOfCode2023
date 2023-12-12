@@ -47,6 +47,10 @@ namespace AdventOfCode.Solver.Day10
     }
     public class SolverDay10 : Solver
     {
+        [SerializeField]
+        private GameObject _longPipe;
+        [SerializeField]
+        private GameObject _jPipe;
         private Graph<Pipe> _graph;
 
         private string _cleanInput;
@@ -366,7 +370,7 @@ namespace AdventOfCode.Solver.Day10
                 }
             }
             bool isFinished = false;
-            Direction way1 = Direction.None, way2;
+            Direction way1 = Direction.None;
 
             if ((lines[movingIndex][ind - 1] == 'F')
                 || (lines[movingIndex][ind - 1] == 'L')

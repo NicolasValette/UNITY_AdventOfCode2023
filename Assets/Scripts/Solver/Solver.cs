@@ -12,6 +12,8 @@ namespace AdventOfCode.Solver
         protected bool _part1 = false;
         [SerializeField]
         protected bool _part2 = false;
+        [SerializeField]
+        protected string _filename;
         [TextArea(17, 1000)]
         [SerializeField]
         protected string _input;
