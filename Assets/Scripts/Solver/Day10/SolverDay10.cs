@@ -3,6 +3,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
@@ -38,6 +39,39 @@ namespace AdventOfCode.Solver.Day10
         private int line;
         private int column;
         public TypeOfPipe Type { get; set; }
+        public int Line { get => line; }
+        public int Column { get => column; }
+        public int Angle
+        {
+            get
+            {
+                if (Type == TypeOfPipe.Vertical)
+                {
+                    return 90;
+                }
+                else if (Type == TypeOfPipe.Vertical)
+                {
+                    return 0;
+                }
+                else if (Type == TypeOfPipe.JShape)
+                {
+                    return 0;
+                }
+                else if (Type == TypeOfPipe.LShape)
+                {
+                    return 90;
+                }
+                else if (Type == TypeOfPipe.FShape)
+                {
+                    return 180;
+                }
+                else if (Type == TypeOfPipe.SevenShape)
+                {
+                    return 270;
+                }
+                return 0;
+            }
+        }
         public Pipe(TypeOfPipe orientation, int l, int c)
         {
             line = l;
@@ -352,8 +386,16 @@ namespace AdventOfCode.Solver.Day10
         }
         private void ReadData(bool verbose)
         {
-
             _graph = new Graph<Pipe>();
+
+            
+
+
+            string path = Path.Combine(Application.streamingAssetsPath, _filename);
+            if (_verbose) Debug.Log($"Reading file : {path}");
+            StreamReader _stream = new StreamReader(path);
+            _input = _stream.ReadToEnd();
+
             string[] lines = _input.Split('\n');
             bool[,] boolGraph = new bool[lines.Length, lines[0].Trim().Length];
 
@@ -419,6 +461,14 @@ namespace AdventOfCode.Solver.Day10
                     ind += -1;
                 }
                 actPipe = new Pipe(GetPipe(lines[movingIndex][ind]), movingIndex, ind);
+                if (actPipe.Type == TypeOfPipe.Vertical || actPipe.Type == TypeOfPipe.Horizontal)
+                {
+                    Instantiate(_longPipe, new Vector3(0, -1 * actPipe.Line, actPipe.Column), Quaternion.AngleAxis(actPipe.Angle, Vector3.right));
+                }
+                else if (actPipe.Type == TypeOfPipe.SevenShape || actPipe.Type == TypeOfPipe.LShape || actPipe.Type == TypeOfPipe.JShape || actPipe.Type == TypeOfPipe.FShape)
+                {
+                    Instantiate(_jPipe, new Vector3(0, -1 * actPipe.Line, actPipe.Column), Quaternion.AngleAxis(actPipe.Angle, Vector3.right));
+                }
                 _graph.AddEdge(prevPipe, actPipe);
 
 

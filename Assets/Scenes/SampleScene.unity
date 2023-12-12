@@ -3891,7 +3891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1086438969
 Transform:
   m_ObjectHideFlags: 0
@@ -3921,11 +3921,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _verbose: 1
   _part1: 0
-  _part2: 1
+  _part2: 0
   _filename: Day10/Input.txt
   _input: 
-  _longPipe: {fileID: 0}
-  _jPipe: {fileID: 0}
+  _longPipe: {fileID: 46941078595904816, guid: 5f79fa1cc969bdd4c8d9d537c420367b, type: 3}
+  _jPipe: {fileID: 7211737492810770348, guid: b448e7691b167d7469ecf40d6eeee414, type: 3}
 --- !u!1 &1159132788
 GameObject:
   m_ObjectHideFlags: 0
