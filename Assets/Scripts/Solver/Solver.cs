@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ namespace AdventOfCode.Solver
 {
     public abstract class Solver : MonoBehaviour
     {
+        #region Serialized Fields
         [SerializeField]
         protected bool _verbose = false;
         [SerializeField]
@@ -17,5 +19,7 @@ namespace AdventOfCode.Solver
         [TextArea(17, 1000)]
         [SerializeField]
         protected string _input;
+        #endregion
+      
     }
 }

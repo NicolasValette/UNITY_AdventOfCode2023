@@ -85,7 +85,13 @@ namespace AdventOfCode.Solver.Day10
         private GameObject _longPipe;
         [SerializeField]
         private GameObject _jPipe;
+        [SerializeField]
+        private GameObject _startPipe;
         private Graph<Pipe> _graph;
+
+        #region Events
+        public static event Action<Vector2> OnStart;
+        #endregion
 
         private string _cleanInput;
         // Start is called before the first frame update
@@ -439,6 +445,8 @@ namespace AdventOfCode.Solver.Day10
                 way1 = Direction.South;
             }
             Pipe startPipe = new Pipe(TypeOfPipe.Start, movingIndex, ind);
+            Instantiate(_startPipe, new Vector3(0, -1 * startPipe.Line, startPipe.Column), Quaternion.AngleAxis(startPipe.Angle, Vector3.right));
+            OnStart?.Invoke(new Vector2(startPipe.Line, startPipe.Column));
             Pipe prevPipe = new Pipe(TypeOfPipe.Start, movingIndex, ind);
             Pipe actPipe;
             while (!isFinished)
