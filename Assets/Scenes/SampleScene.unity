@@ -6821,10 +6821,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8bc892a172fd11429fb018ef2df77af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _verbose: 0
-  _part1: 1
-  _part2: 0
-  _filename: test.txt
+  _verbose: 1
+  _part1: 0
+  _part2: 1
+  _filename: Day14/Input.txt
   _input: 
 --- !u!1 &1762511894
 GameObject:
