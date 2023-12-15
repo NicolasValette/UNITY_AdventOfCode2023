@@ -93,7 +93,6 @@ namespace AdventOfCode.Solver
             int id = 0;
             while (_pattern != null)
             {
-                int reflexionline = 0;
                 mirrorColumn = -1;
                 mirrorLine = -1;
                 mirrorColumn2 = -1;

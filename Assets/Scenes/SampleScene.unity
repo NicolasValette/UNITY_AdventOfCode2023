@@ -6793,7 +6793,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1718870297
 Transform:
   m_ObjectHideFlags: 0
@@ -6873,7 +6873,56 @@ MonoBehaviour:
   _verbose: 1
   _part1: 1
   _part2: 0
-  _filename: Day13/Input.txt
+  _filename: test.txt
+  _input: 
+--- !u!1 &1837066437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837066438}
+  - component: {fileID: 1837066439}
+  m_Layer: 0
+  m_Name: SolverDay15
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837066438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837066437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960999485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837066439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837066437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e7b5d9c7f3dd0946ae5c379f2cbd56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verbose: 1
+  _part1: 0
+  _part2: 1
+  _filename: Day15/Input.txt
   _input: 
 --- !u!1 &1912221933
 GameObject:
@@ -7743,6 +7792,7 @@ Transform:
   - {fileID: 81800529}
   - {fileID: 1762511895}
   - {fileID: 1718870297}
+  - {fileID: 1837066438}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2137665699

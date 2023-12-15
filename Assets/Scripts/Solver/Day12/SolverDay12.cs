@@ -129,7 +129,6 @@ namespace AdventOfCode.Solver.Day12
                 }
             }
             return 0;
-
         }
         private void SolvePart1(bool verbose)
         {
