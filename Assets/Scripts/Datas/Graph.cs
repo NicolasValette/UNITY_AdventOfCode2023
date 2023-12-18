@@ -33,6 +33,7 @@ namespace AdventOfCode.Datas
                 _edges[from] = new LinkedList<T>();
                 _numberOfNode++;
             }
+            if (verbose) Debug.Log($"node : {from.ToString()}, add child : {to.ToString()}");
             _edges[from].AddLast(to);
 
         }
