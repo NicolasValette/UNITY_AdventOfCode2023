@@ -3450,10 +3450,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _verbose: 0
-  _part1: 1
+  _part1: 0
   _part2: 1
-  _filename: test
-  _input: 
+  _filename: test.txt
+  _input: "3\_202\_631"
 --- !u!1 &429098869
 GameObject:
   m_ObjectHideFlags: 0
