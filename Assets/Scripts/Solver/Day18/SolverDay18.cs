@@ -1,7 +1,11 @@
+using AdventOfCode.Datas;
 using AdventOfCode.Utility;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
 
@@ -79,6 +83,7 @@ namespace AdventOfCode.Solver.Day18
         private string[,] _strtab2;
         private long _iLength2;
         private long _jLength2;
+        private List<Coords> _points;
         private long _boundaries = 0L;
         private long _boundaries2 = 0L;
         private Queue<(long, long)> _queueShoelace1;
@@ -102,6 +107,7 @@ namespace AdventOfCode.Solver.Day18
             long imax = 0, imin = 0, jmax = 0, jmin = 0, i=0, j=0;
             long imax2 = 0, imin2 = 0, jmax2 = 0, jmin2 = 0, i2 = 0, j2 = 0;
             Queue<Cell> queue = new Queue<Cell>();
+            _points = new List<Coords>();
             _queueShoelace1 = new Queue<(long,long)>();
             _queueShoelace2 = new Queue<(long, long)>();
             while (!_stream.EndOfStream)
@@ -172,6 +178,8 @@ namespace AdventOfCode.Solver.Day18
                 jmax2 = (j2 > jmax2) ? j2 : jmax2;
                 jmin2 = (j2 < jmin2) ? j2 : jmin2;
                 _boundaries2 += n;
+                Coords co = new Coords(i2, j2);
+                _points.Add(co);
                 _queueShoelace2.Enqueue((i2,j2)) ;
             }
             //ComputeCharTab(imax, imin, jmax, jmin, queue);
@@ -203,7 +211,23 @@ namespace AdventOfCode.Solver.Day18
             //Debug.Log($"({old.Item1} + {first.Item2}) * ({first.Item1} - {old.Item2}) = {tmp}");
             return (long)(Mathf.Abs(solution)/2L);
         }
-    
+
+        private long ShoelaceFormula(List<Coords> coords)
+        {
+            long solution = 0L;
+            Coords previousCoords = coords.Last();
+            foreach(Coords coord in coords)
+            { 
+              //  solution += (previousCoords.X + coord.X) * (previousCoords.Y - coord.Y);
+              var tmp = (previousCoords.Y * coord.X) - (coord.Y * previousCoords.X);
+                solution += tmp;
+                Debug.Log($"Coord (list) : ({coord.X};{coord.Y})\n({previousCoords.Y} * {coord.X}) - ({coord.Y} * {previousCoords.X}) = {tmp}");
+                Debug.Log($"A temp  (list) = {solution}");
+                previousCoords = coord;
+            }
+            return Math.Abs(solution) / 2L;
+        }
+
         //private void ComputeCharTab2(int imax, int imin, int jmax, int jmin, Queue<Cell> queue)
         //{
         //    _iLength2 = imax + Mathf.Abs(imin) + 1;
@@ -278,8 +302,21 @@ namespace AdventOfCode.Solver.Day18
             Debug.Log($"A : {(long)A}; i:{(long)i}, b : {boundaries} ");
             return i + boundaries;
         }
+        private float Solve(List<Coords>points, long boundaries)
+        {
+            long A = ShoelaceFormula(points);
+            var i = A - boundaries / 2 + 1;
+            Debug.Log($"(list ver) A : {A}; i : {i}, b : {boundaries} ");
+            return i + boundaries;
+        }
 
-
+        private long Solve2(List<Coords> points, long boundaries)
+        {
+            long A = ShoelaceFormula(points);
+            var i = A + boundaries / 2 + 1;
+            Debug.Log($"(list ver) A : {A}; i : {i}, b : {boundaries} ");
+            return i;
+        }
 
 
         //private void ComputeCharTab(long imax, long imin, long jmax, long jmin, Queue<Cell> queue)
@@ -403,20 +440,15 @@ namespace AdventOfCode.Solver.Day18
         }
         private void SolvePart2(bool verbose)
         {
-            Stack<(long, long)> s = new Stack<(long, long)>();
-            Queue<(long, long)> q = new Queue<(long, long)>();
-            foreach(var point in _queueShoelace2)
-            {
-                s.Push(point);
-            }
-            foreach (var point in s)
-            {
-                q.Enqueue(point);
-            }
-            var part2 = Solve(q, _boundaries2);
+
             //var part2 = Solve(_queueShoelace2, _boundaries2);
 
-            Debug.Log($"Solution Shoelace Part2 : {(long)part2}");
+            //Debug.Log($"Solution Shoelace Part2 : {(long)part2}");
+
+         //   var part2b = Solve(_points, _boundaries2);
+            var part2bb = Solve2(_points, _boundaries2);
+          //  Debug.Log($"Solution Shoelace Part2 : {(long)part2b}");
+            Debug.Log($"Solution Shoelace Part2b : {part2bb}");
         }
     }
 }
