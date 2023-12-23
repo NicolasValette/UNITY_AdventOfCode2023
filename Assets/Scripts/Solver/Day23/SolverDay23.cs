@@ -94,6 +94,8 @@ namespace AdventOfCode.Solver.Day23
         }
         private void ReadDataPart2(bool verbose)
         {
+
+            // Need to compress graph, only node between crossreoads, each path come with his length
             string path = Path.Combine(Application.streamingAssetsPath, _filename);
             if (_verbose) Debug.Log($"Reading file : {path}");
             StreamReader stream = new StreamReader(path);

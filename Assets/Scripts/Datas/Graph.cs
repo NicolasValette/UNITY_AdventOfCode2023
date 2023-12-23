@@ -12,6 +12,7 @@ namespace AdventOfCode.Datas
 {
     public class WeightGraph<T> : Graph<T> where T : IMeasurable
     {
+        private Dictionary<string, List<T>> _edges;
         public new int FindLongestPath(T current, Dictionary<string, int> visited, bool verbose = false)
         {
             int result = 0;
@@ -43,7 +44,7 @@ namespace AdventOfCode.Datas
         public T Actual { get => _actualNode; }
         public T Starting { get => _startingNode; }
         public List<T> Final { get => _finalNode; }
-        protected Dictionary<string, LinkedList<T>> _edges;
+        private Dictionary<string, LinkedList<T>> _edges;
         public long Count { get => _numberOfNode; }
 
         public Graph()
