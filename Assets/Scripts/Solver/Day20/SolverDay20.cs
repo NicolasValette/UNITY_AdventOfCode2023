@@ -44,10 +44,7 @@ namespace AdventOfCode.Solver.Day20
                         string beam = module.IsHigh ?"high":"low";
                         if (verbose) Debug.Log($"[{module.Source}] - {beam} -> {module.Target}");
 
-                        if (module.Target == "vf")
-                        {
-                            int i = 0;
-                        }
+                    
 
                         if (module.Target == "vf" && module.IsHigh && !_conjectionRX.ContainsKey(module.Source))
                         {

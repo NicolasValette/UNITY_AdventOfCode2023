@@ -3659,7 +3659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &486789430
 Transform:
   m_ObjectHideFlags: 0
@@ -7170,6 +7170,78 @@ MonoBehaviour:
   _part2: 1
   _filename: Day15/Input.txt
   _input: 
+--- !u!1 &1869073210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869073211}
+  - component: {fileID: 1869073212}
+  - component: {fileID: 1869073213}
+  m_Layer: 0
+  m_Name: SolverDay22
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1869073211
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869073210}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960999485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1869073212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869073210}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc75bb7799e50a45a9d44d7f9fff636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verbose: 1
+  _part1: 1
+  _part2: 0
+  _filename: Day22/input.txt
+  _input: 
+  _brickPartsPrefab:
+  - {fileID: 4520171170906110991, guid: 30679fb64cbae3c43bad13322c54583b, type: 3}
+  - {fileID: 9207051894232089996, guid: 520f98691e1e6dc42b468b228c317bb8, type: 3}
+  - {fileID: 5941234402413188883, guid: 3849d86b6de276b4990ecca4571d8917, type: 3}
+  - {fileID: 1346880694408517865, guid: 76522669870700446bfec11135e43f98, type: 3}
+--- !u!114 &1869073213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869073210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6dbf84cdf18854cb021dc488c08aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verbose: 0
+  _part1: 0
+  _part2: 0
+  _filename: test.txt
+  _input: 
 --- !u!1 &1912221933
 GameObject:
   m_ObjectHideFlags: 0
@@ -8044,8 +8116,110 @@ Transform:
   - {fileID: 294699156}
   - {fileID: 3915810}
   - {fileID: 486789430}
+  - {fileID: 2093955557}
+  - {fileID: 1869073211}
+  - {fileID: 2123074673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2093955556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2093955557}
+  - component: {fileID: 2093955558}
+  m_Layer: 0
+  m_Name: SolverDay21
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2093955557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093955556}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960999485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2093955558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093955556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901813b2cc49f27459b313ee9a7da24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verbose: 0
+  _part1: 1
+  _part2: 0
+  _filename: Day21/input.txt
+  _input: 
+  _steps: 196
+--- !u!1 &2123074672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123074673}
+  - component: {fileID: 2123074674}
+  m_Layer: 0
+  m_Name: SolverDay23
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123074673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123074672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1960999485}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123074674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123074672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 168822b1a04fb7345b2fce28a467a2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _verbose: 0
+  _part1: 1
+  _part2: 0
+  _filename: test.txt
+  _input: 
 --- !u!1 &2137665699
 GameObject:
   m_ObjectHideFlags: 0
