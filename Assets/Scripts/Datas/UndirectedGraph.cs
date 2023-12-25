@@ -31,7 +31,7 @@ namespace AdventOfCode.Datas
             _nodes = new Dictionary<string, T>();
             NumberOfMove = 0;
         }
-        public UndirectedGraph( UndirectedGraph<T> copy)
+        public UndirectedGraph(UndirectedGraph<T> copy)
         {
             _edges = new Dictionary<string, LinkedList<T>>(copy.Edges);
             _nodes = new Dictionary<string, T>(copy.Nodes);
@@ -41,7 +41,7 @@ namespace AdventOfCode.Datas
         public void RemoveNode(T nodeToRemove)
         {
             List<T> neighbours = _edges[nodeToRemove.ToString()].ToList();
-            for (int i=0;i<neighbours.Count;i++)
+            for (int i = 0; i < neighbours.Count; i++)
             {
                 T neighbour = neighbours[i];
                 _edges[neighbour.ToString()].Remove(nodeToRemove);
@@ -50,7 +50,7 @@ namespace AdventOfCode.Datas
             _edges.Remove(nodeToRemove.ToString());
             _numberOfNode--;
         }
-      
+
         public T GetNode(string node)
         {
             return _nodes[node];
@@ -58,6 +58,11 @@ namespace AdventOfCode.Datas
         public List<T> GetNeighbours(T node)
         {
             return _edges[node.ToString()].ToList();
+        }
+        public void RemoveEdge(T node1, T node2, bool verbose = false)
+        {
+            _edges[node1.ToString()].Remove(node2);
+            _edges[node2.ToString()].Remove(node1);
         }
         public void AddEdge(T node1, T node2, bool verbose = false)
         {
@@ -159,6 +164,31 @@ namespace AdventOfCode.Datas
                     DepthSearch(value, visited);
                 }
             }
+        }
+
+
+
+        public long BFS (T startingNode)
+        {
+            var visited = new HashSet<string>();
+            var queue = new Queue<T>();
+            queue.Enqueue(startingNode);
+
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+
+                if (!visited.Add(current.ToString()))
+                {
+                    continue;
+                }
+
+                foreach (var connection in _edges[current.ToString()])
+                {
+                    queue.Enqueue(connection);
+                }
+            }
+            return visited.Count;
         }
         public override string ToString()
         {
