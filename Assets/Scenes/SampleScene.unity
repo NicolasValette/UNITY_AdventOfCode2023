@@ -8268,11 +8268,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _verbose: 0
-  _part1: 1
-  _part2: 0
-  _filename: test.txt
+  _part1: 0
+  _part2: 1
+  _filename: Day21/Input.txt
   _input: 
-  _steps: 196
+  _steps: 26501365
 --- !u!1 &2123074672
 GameObject:
   m_ObjectHideFlags: 0
