@@ -955,7 +955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &57282739
 Transform:
   m_ObjectHideFlags: 0
@@ -8239,7 +8239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2093955557
 Transform:
   m_ObjectHideFlags: 0
@@ -8270,7 +8270,7 @@ MonoBehaviour:
   _verbose: 0
   _part1: 1
   _part2: 0
-  _filename: Day21/input.txt
+  _filename: test.txt
   _input: 
   _steps: 196
 --- !u!1 &2123074672
