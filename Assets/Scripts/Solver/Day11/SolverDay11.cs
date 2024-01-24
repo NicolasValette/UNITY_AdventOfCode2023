@@ -1,10 +1,6 @@
-using Mono.Reflection;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace AdventOfCode.Solver.Day11
